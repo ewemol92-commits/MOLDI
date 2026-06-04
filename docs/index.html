@@ -130,6 +130,7 @@
     .checklist { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 18px 0; }
     .check-item { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper-solid); }
     .check-item input { margin-top: 5px; transform: scale(1.2); accent-color: var(--accent); }
+    .check-item span { color: var(--ink); }
     .question-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
     .question-grid div { padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper-solid); }
     .question-grid strong { display: block; color: var(--accent); margin-bottom: 7px; }
@@ -147,9 +148,15 @@
     @media (max-width: 920px) { .meta-grid, .quick, .tips, .workspace, .question-grid { grid-template-columns: 1fr; } .diagram { grid-template-columns: repeat(2,1fr); } .checklist { grid-template-columns: 1fr; } }
     @media (max-width: 560px) { .wrap { width: min(100% - 22px, 1180px); } header.hero { padding-top: 22px; } .hero-card { border-radius: 24px; padding: 24px; } .diagram { grid-template-columns: 1fr; } .section-head { flex-direction: column; } .nav-inner { border-radius: 18px; } }
     @media print {
-      body { background: #fff; } .progress, .buttons, nav.sticky, .scenario-panel .tabs, .workspace, .btn, button { display: none !important; }
-      .wrap { width: 100%; } .hero-card, .content-section, .quick-card, .scenario-panel { box-shadow: none; break-inside: avoid; background: #fff; color: #111; }
-      .content-section { page-break-inside: avoid; } body.compact .full-text p, body.compact .full-text table, body.compact .full-text .table-wrap { display: block; }
+      html, body { background: #fff !important; color: #111 !important; }
+      .progress, .buttons, nav.sticky, .scenario-panel .tabs, .workspace, .btn, button { display: none !important; }
+      .wrap { width: 100% !important; max-width: none !important; padding: 0 !important; }
+      .hero-card, .content-section, .quick-card, .scenario-panel { box-shadow: none !important; break-inside: avoid; background: #fff !important; color: #111 !important; }
+      .hero-card *, .content-section *, .quick-card *, .scenario-panel * { color: #111 !important; background: transparent !important; }
+      .content-section { page-break-inside: avoid; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      body.compact .full-text p, body.compact .full-text table, body.compact .full-text .table-wrap { display: block !important; }
+      a { color: #111 !important; text-decoration: underline; }
     }
   </style>
 </head>
